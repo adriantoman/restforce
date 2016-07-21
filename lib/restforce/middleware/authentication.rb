@@ -80,8 +80,9 @@ module Restforce
     private
 
     def faraday_options
-      { url: "https://#{@options[:host]}",
+      { url: "https://#{@options[:host]}", ssl: @options[:ssl],
         proxy: @options[:proxy_uri] }.reject { |k, v| v.nil? }
     end
+
   end
 end
